@@ -3,13 +3,30 @@ import { connect } from 'react-redux';
 import Opportunities from './Opportunities'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      opps: []
+    }
+  }
+
+  componentDidMount(){
+    this.handleSubmit()
+  }
+
+  handleSubmit = (query = 'volunteer') => {
+    fetch('')
+    .then(res => res.json())
+    .then(({data}) => this.setState({
+      opps: data.map(opp => ({title: opp.title}))
+    }))
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
           <Opportunities />
-        </header>
+          <OppSearch onSubmit={this.handleSubmit} />
       </div>
     );
   }
