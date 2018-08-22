@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import {Form, Input} from 'reactstrap'
 
 export default class OppSearch extends Component {
   constructor(){
-    super();
+    super()
 
     this.state={
       query:''
@@ -15,12 +16,10 @@ export default class OppSearch extends Component {
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.formSubmit}>
-          <input type="text" value={this.state.query} onChange={e => this.setState({query: e.target.value})} />
-          <input type="submit" />
-        </form>
-      </div>
+      <Form inline onSubmit={this.formSubmit}>
+        <Input type="text" value={this.state.query} onChange={e => this.setState({query: e.target.value})} />
+        <Input type="submit" />
+      </Form>
     )
   }
 }
