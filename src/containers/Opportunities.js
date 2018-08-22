@@ -1,17 +1,16 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Container, Row, Col} from 'reactstrap'
 import OppCard from '../components/OppCard'
 
 class Opportunities extends Component {
   render() {
     return(
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            {this.props.opps.map(opp => <OppCard />)}
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row>
+          {this.props.opps.map(opp => <Col sm="4"><OppCard opp={opp}/></Col>)}
+        </Row>
+      </Container>
     );
   }
 }
