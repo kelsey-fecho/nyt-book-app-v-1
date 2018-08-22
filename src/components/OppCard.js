@@ -9,7 +9,7 @@ const OppCard = ({opp}) =>
     <CardBody>
       <CardTitle>{opp.title}</CardTitle>
       <CardText>{opp.desc}</CardText>
-      <Button>Button</Button>
+      <Button>Apply</Button>
     </CardBody>
     </Card>
   </div>
