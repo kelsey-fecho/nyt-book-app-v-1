@@ -8,7 +8,7 @@ class Opportunities extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            {opps.map(opp => <OppCard />)}
+            {this.props.opps.map(opp => <OppCard />)}
           </div>
         </div>
       </div>
@@ -22,4 +22,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(Quotes);
+export default connect(mapStateToProps, null)(Opportunities);
