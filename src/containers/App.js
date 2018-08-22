@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Opportunities from './Opportunities'
+import OppSearch from '../components/OppSearch'
 
 class App extends Component {
   constructor(){
@@ -15,11 +16,11 @@ class App extends Component {
   }
 
   handleSubmit = (query = 'volunteer') => {
-    fetch('')
-    .then(res => res.json())
-    .then(({data}) => this.setState({
-      opps: data.map(opp => ({title: opp.title}))
-    }))
+    // fetch('')
+    // .then(res => res.json())
+    // .then(({data}) => this.setState({
+    //   opps: data.map(opp => ({title: opp.title}))
+    // }))
   }
 
   render() {
