@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Books />
+          <Books books={this.state.books}/>
           <BookSearch onSubmit={this.handleSubmit} />
       </div>
     );
