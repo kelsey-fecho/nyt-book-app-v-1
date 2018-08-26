@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Books from './Books'
 import BookSearch from '../components/BookSearch'
 
 class App extends Component {
   constructor(){
-    super();
+    super()
     this.state={
-      opps: []
+      books: []
     }
   }
 
@@ -15,12 +14,12 @@ class App extends Component {
     this.handleSubmit()
   }
 
-  handleSubmit = (query = 'austen') => {
-   //  fetch(``)
-   //   .then(res => res.json())
-   //   .then(({results}) => this.setState({
-   //     books: results.map(opp => ({title: book.title}))
-   // }))
+  handleSubmit = () => {
+     fetch('https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-fiction&api-key=e6b608fbf6e6484bab1b9663f82858e0')
+      .then(res => res.json())
+      .then(({results}) => this.setState({
+        books: results.map(book => ({title: book.book_details[0].title}))
+      }))
   }
 
   render() {
