@@ -8,17 +8,19 @@ class Books extends Component {
     return(
       <Container>
         <Row>
-          {this.props.books.map(book => <Col sm="4"><BookCard book={book}/></Col>)}
+          {this.props.books.map((book, index) => <Col sm="4"><BookCard book={book} key={index} /></Col>)}
         </Row>
       </Container>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    books: state.books
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     books: state.books
+//   }
+// }
 
-export default connect(mapStateToProps, null)(Books);
+//export default connect(mapStateToProps, null)(Books);
+
+export default Books
