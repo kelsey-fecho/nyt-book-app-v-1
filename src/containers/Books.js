@@ -8,7 +8,7 @@ class Books extends Component {
     return(
       <Container>
         <Row>
-          {this.props.books.map(opp => <Col sm="4"><BookCard book={book}/></Col>)}
+          {this.props.books.map(book => <Col sm="4"><BookCard book={book}/></Col>)}
         </Row>
       </Container>
     );
