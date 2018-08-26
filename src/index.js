@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
-import volunteerOppsReducer from './reducers/volunteerOppsReducer'
+import booksReducer from './reducers/bookssReducer'
 
-const store = createStore(volunteerOppsReducer);
+const store = createStore(booksReducer);
 
 ReactDOM.render(
   <Provider store={store}>

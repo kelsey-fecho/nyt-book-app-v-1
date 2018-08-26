@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Opportunities from './Opportunities'
-import OppSearch from '../components/OppSearch'
+import Books from './Books'
+import BookSearch from '../components/BookSearch'
 
 class App extends Component {
   constructor(){
@@ -15,19 +15,19 @@ class App extends Component {
     this.handleSubmit()
   }
 
-  handleSubmit = (query = 'volunteer') => {
-    // fetch('')
-    // .then(res => res.json())
-    // .then(({data}) => this.setState({
-    //   opps: data.map(opp => ({title: opp.title}))
-    // }))
+  handleSubmit = (query = 'austen') => {
+   //  fetch(``)
+   //   .then(res => res.json())
+   //   .then(({results}) => this.setState({
+   //     books: results.map(opp => ({title: book.title}))
+   // }))
   }
 
   render() {
     return (
       <div className="App">
-          <Opportunities />
-          <OppSearch onSubmit={this.handleSubmit} />
+          <Books />
+          <BookSearch onSubmit={this.handleSubmit} />
       </div>
     );
   }

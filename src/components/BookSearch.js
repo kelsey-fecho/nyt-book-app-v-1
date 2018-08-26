@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Form, Input} from 'reactstrap'
 
-export default class OppSearch extends Component {
+export default class BookSearch extends Component {
   constructor(){
     super()
 
