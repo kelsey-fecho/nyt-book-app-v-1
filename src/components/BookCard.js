@@ -4,7 +4,7 @@ import { Card, CardText, CardSubtitle, CardBody, CardTitle, Button } from 'react
 
 const BookCard = ({book}) =>
   <div>
-    <Card inverse style={{ backgroundColor: '#d5beae', margin: '1.25rem auto' }}>
+    <Card inverse style={{ backgroundColor: '#d9c5c5', margin: '1.25rem auto' }}>
     <CardBody>
       <CardTitle>{book.title}</CardTitle>
       <CardSubtitle>{book.author}</CardSubtitle>
