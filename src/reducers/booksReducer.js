@@ -14,7 +14,13 @@ export default function booksReducer(state = {fiction: [], nonfiction:[], loadin
             }
 
     case 'FETCH_NONFICTION':
-      return {...state, nonfiction: action.payload}
+    return {
+      ...state,
+      nonfiction: action.payload.map(book => ({title: book.book_details[0].title,
+                                    desc: book.book_details[0].description,
+                                    author: book.book_details[0].author,
+                                    link: book.amazon_product_url}))
+            }
 
     default:
       return state;
