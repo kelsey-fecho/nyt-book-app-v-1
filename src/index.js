@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import booksReducer from './reducers/booksReducer';
