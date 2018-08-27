@@ -1,14 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
-import booksReducer from './reducers/booksReducer'
+import booksReducer from './reducers/booksReducer';
 
-const store = createStore(booksReducer);
+const store = createStore(booksReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
