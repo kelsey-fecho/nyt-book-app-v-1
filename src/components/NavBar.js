@@ -1,19 +1,16 @@
 import React from 'react'
-import {Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap'
+import {NavLink} from 'react-router-dom'
+import {Container, Row, Col} from 'reactstrap'
 
-function NavBar(props){
+const NavBar = () => {
   return (
-    <Navbar color='light'>
-      <NavbarBrand href='/'>Book Lister</NavbarBrand>
-      <Nav pills>
-        <NavItem>
-          <NavLink href="/fiction">Combined Fiction</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/nonfiction">Combined Non-Fiction</NavLink>
-        </NavItem>
-      </Nav>
-    </Navbar>
+    <Container>
+      <Row>
+        <Col sm="4"><NavLink to="/" exact className="nav-link">BookLister</NavLink></Col>
+        <Col sm="4"><NavLink to="/fiction" exact className="nav-link">Combined Fiction</NavLink></Col>
+        <Col sm="4"><NavLink to="/nonfiction" exact className="nav-link">Combined Non-Fiction</NavLink></Col>
+      </Row>
+    </Container>
   )
 }
 
