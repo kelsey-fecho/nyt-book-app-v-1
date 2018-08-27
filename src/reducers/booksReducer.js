@@ -1,10 +1,22 @@
-export default function booksReducer(state = {fiction: [], nonfiction:[]}, action) {
+export default function booksReducer(state = {fiction: [], nonfiction:[], loading: false}, action) {
  switch(action.type) {
 
-   case 'INCREASE_COUNT':
-     return state.books.concat(state.books.length + 1);
+   case 'LOADING':
+    return  {...state, loading: true}
 
-   default:
-     return state;
+   case 'FETCH_FICTION':
+    return {
+      ...state,
+      fiction: action.payload.map(book => ({title: book.book_details[0].title,
+                                    desc: book.book_details[0].description,
+                                    author: book.book_details[0].author,
+                                    link: book.amazon_product_url}))
+            }
+
+    case 'FETCH_NONFICTION':
+      return {...state, nonfiction: action.payload}
+
+    default:
+      return state;
  }
 }
