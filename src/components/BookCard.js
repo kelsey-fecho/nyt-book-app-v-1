@@ -9,7 +9,7 @@ const BookCard = ({book}) =>
       <CardTitle>{book.title}</CardTitle>
       <CardSubtitle>{book.author}</CardSubtitle>
       <CardText>{book.desc}</CardText>
-      <Button>Read</Button>
+      <Button href={book.link} target="_blank">Get It</Button>
     </CardBody>
     </Card>
   </div>
