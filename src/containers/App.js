@@ -6,13 +6,6 @@ import NavBar from '../components/NavBar'
 import {fetchFiction} from'../actions/bookActions'
 
 export class App extends Component {
-  constructor(){
-    super()
-    this.state={
-      fiction: [],
-      nonfiction: []
-    }
-  }
 
   componentDidMount(){
     const API_KEY =`${process.env.REACT_APP_NYT_API_KEY}`
@@ -33,13 +26,19 @@ export class App extends Component {
       <Router>
         <React.Fragment>
           <NavBar />
-          <Route exact path='/' component={() => <Books books={this.state.fiction}/>} />
-          <Route exact path='/fiction' component={() => <Books books={this.state.fiction}/>} />
+          <Route exact path='/' component={() => <Books books={this.props.fiction}/>} />
+          <Route exact path='/fiction' component={() => <Books books={this.props.fiction}/>} />
           <Route exact path='/nonfiction' component={() => <Books books={this.state.nonfiction}/>} />
 
         </React.Fragment>
       </Router>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    fiction: state.fiction
   }
 }
 
@@ -49,4 +48,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
