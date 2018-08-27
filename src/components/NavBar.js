@@ -7,10 +7,10 @@ function NavBar(props){
       <NavbarBrand href='/'>Book Lister</NavbarBrand>
       <Nav pills>
         <NavItem>
-          <NavLink href="#">Combined Fiction</NavLink>
+          <NavLink href="/fiction">Combined Fiction</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Combined Non-Fiction</NavLink>
+          <NavLink href="/nonfiction">Combined Non-Fiction</NavLink>
         </NavItem>
       </Nav>
     </Navbar>
