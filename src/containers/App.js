@@ -16,7 +16,8 @@ class App extends Component {
      .then(({results}) => this.setState({
        books: results.map(book => ({title: book.book_details[0].title,
                                    desc: book.book_details[0].description,
-                                   author: book.book_details[0].author}))
+                                   author: book.book_details[0].author,
+                                   link: book.amazon_product_url}))
      }))
   }
 
