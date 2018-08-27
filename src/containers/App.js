@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Books from './Books'
 import NavBar from '../components/NavBar'
+import {fetchFiction} from'../actions/bookActions'
 
-class App extends Component {
+export class App extends Component {
   constructor(){
     super()
     this.state={
@@ -14,14 +16,7 @@ class App extends Component {
 
   componentDidMount(){
     const API_KEY =`${process.env.REACT_APP_NYT_API_KEY}`
-    fetch(`https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-fiction&api-key=${API_KEY}`)
-     .then(res => res.json())
-     .then(({results}) => this.setState({
-       fiction: results.map(book => ({title: book.book_details[0].title,
-                                   desc: book.book_details[0].description,
-                                   author: book.book_details[0].author,
-                                   link: book.amazon_product_url}))
-     }))
+    this.props.fetchFiction();
 
      fetch(`https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-nonfiction&api-key=${API_KEY}`)
       .then(res => res.json())
@@ -48,4 +43,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return{
+    fetchFiction: () => dispatch(fetchFiction())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);
