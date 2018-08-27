@@ -15,12 +15,4 @@ class Books extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     books: state.books
-//   }
-// }
-
-//export default connect(mapStateToProps, null)(Books);
-
 export default Books
