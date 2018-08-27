@@ -1,4 +1,4 @@
-export default function booksReducer(state = {books: []}, action) {
+export default function booksReducer(state = {fiction: [], nonfiction:[]}, action) {
  switch(action.type) {
 
    case 'INCREASE_COUNT':
