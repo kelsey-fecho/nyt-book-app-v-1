@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
-
+import {Container, Row, Col} from 'reactstrap'
+import {addComment} from '../actions/commentActions'
 export class CommentForm extends Component {
 
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
 
     this.state={
-      newcomment: '',
-      newauthor: '',
+      comment: '',
+      author: '',
     }
   }
 
@@ -19,30 +20,37 @@ export class CommentForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.addComment(this.state)
+    addComment(this.state)
+    console.log(addComment(this.state))
     this.setState({
-      newcomment: '',
-      newauthor: ''
+      comment: '',
+      author: ''
     })
   }
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label>Your Name
-            <input type='text' name='newauthor' id='newauthor'onChange={this.handleChange} value={this.state.newauthor}/>
-          </label>
-        </div>
-        <div>
-          <label>Your Comment
-            <input type='textarea' name='newcomment' id='newtext' onChange={this.handleChange} value={this.state.newcomment}/>
-          </label>
-        </div>
-        <div>
-          <input type="submit"/>
-        </div>
-      </form>
+      <Container>
+        <Row>
+          <Col md={{ ize: 8, offset: 2}}>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <label>Your Name
+                  <input type='text' name='author' id='newauthor'onChange={this.handleChange} value={this.state.author}/>
+                </label>
+              </div>
+              <div>
+                <label>Your Comment
+                  <input type='textarea' name='comment' id='newtext' onChange={this.handleChange} value={this.state.comment}/>
+                </label>
+              </div>
+              <div>
+                <input type="submit"/>
+              </div>
+            </form>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
