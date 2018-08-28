@@ -39,7 +39,9 @@ export class CommentForm extends Component {
             <input type='textarea' name='newcomment' id='newtext' onChange={this.handleChange} value={this.state.newcomment}/>
           </label>
         </div>
-        <button type="submit">Add Comment</button>
+        <div>
+          <input type="submit"/>
+        </div>
       </form>
     )
   }
