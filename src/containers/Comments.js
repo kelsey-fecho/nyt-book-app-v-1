@@ -8,14 +8,14 @@ export class Comments extends Component {
   render(){
     return(
       <CommentForm />
-      <CommentsList />
+      <CommentsList comments={this.props.comments}/>
     )
   }
 }
 
 const mapStateToProps = state => {
   return {
-
+    comments: state.comments
   }
 }
 
