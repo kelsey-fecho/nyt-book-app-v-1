@@ -3,16 +3,14 @@ import { Card, CardText, CardSubtitle, CardBody, CardTitle, Button } from 'react
 
 
 const BookCard = ({book}) =>
-  <div>
-    <Card inverse style={{ backgroundColor: '#d9c5c5', margin: '1.25rem auto' }}>
+  <Card inverse style={{ backgroundColor: '#d9c5c5', margin: '1.25rem auto' }}>
     <CardBody>
-      <CardTitle>{book.title}</CardTitle>
-      <CardSubtitle>{book.author}</CardSubtitle>
-      <CardText>{book.desc}</CardText>
-      <Button href={book.link} target="_blank">Get It</Button>
+    <CardTitle>{book.title}</CardTitle>
+    <CardSubtitle>{book.author}</CardSubtitle>
+    <CardText>{book.desc}</CardText>
+    <Button href={book.link} target="_blank">Get It</Button>
     </CardBody>
-    </Card>
-  </div>
+  </Card>
 
 
 
