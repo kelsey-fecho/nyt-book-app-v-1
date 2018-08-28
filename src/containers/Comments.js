@@ -7,8 +7,10 @@ export class Comments extends Component {
 
   render(){
     return(
-      <CommentForm />
-      <CommentsList comments={this.props.comments}/>
+      <React.Fragment>
+        <CommentForm />
+        <CommentsList comments={this.props.comments}/>
+      </React.Fragment>
     )
   }
 }
