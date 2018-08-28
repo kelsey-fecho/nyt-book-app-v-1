@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Container, Row, Col} from 'reactstrap'
 import Comment from '../components/Comment'
 
-export default CommentsList extends Component{
+export class CommentsList extends Component{
   render(){
     return(
       <Container>
@@ -15,3 +15,5 @@ export default CommentsList extends Component{
     )
   }
 }
+
+export default CommentsList
