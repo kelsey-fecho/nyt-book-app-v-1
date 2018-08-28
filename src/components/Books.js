@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import {Container, Row, Col} from 'reactstrap'
 import BookCard from '../components/BookCard'
 
