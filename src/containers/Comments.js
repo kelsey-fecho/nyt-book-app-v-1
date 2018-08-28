@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CommentForm } from '../components/CommentForm'
 import { CommentsList } from '../components/CommentsList'
+import { addComment } from '../actions/commentActions'
 
 export class Comments extends Component {
 
