@@ -8,7 +8,7 @@ export class Comments extends Component {
   render(){
     return(
       <React.Fragment>
-        <CommentForm />
+        <CommentForm addComment={this.props.addComment}/>
         <CommentsList comments={this.props.comments}/>
       </React.Fragment>
     )
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return{
-
+    addComment: formData => dispatch({type: "ADD_TODO", payload: formData})
   }
 }
 
