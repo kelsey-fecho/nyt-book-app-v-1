@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import { Form, FormGroup, Label, Input} from 'reactstrap'
 
 export class CommentForm extends Component {
 
   constructor(){
     super();
+
     this.state={
       newcomment: '',
       newauthor: '',
@@ -13,7 +13,7 @@ export class CommentForm extends Component {
 
   handleChange = e => {
     this.setState({
-      e.target.name: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
@@ -28,17 +28,19 @@ export class CommentForm extends Component {
 
   render(){
     return(
-      <Form onClick={this.handleSubmit()}>
-        <FormGroup>
-          <Label for='author'>Your Name</Label>
-          <Input type='text' name='newauthor' id='newauthor'onChange={this.handleChange()} value={this.state.newauthor}/>
-        </FormGroup>
-        <FormGroup>
-          <Label for='comment'>Your Comment</Label>
-          <Input type='textarea' name='newcomment' id='newtext' onChange={this.handleChange()} value={this.state.newcomment}/>
-        </FormGroup>
-        <Input type='submit' />
-      </Form>
+      <form onSubmit={this.handleSubmit}>
+        <div>
+          <label>Your Name
+            <input type='text' name='newauthor' id='newauthor'onChange={this.handleChange} value={this.state.newauthor}/>
+          </label>
+        </div>
+        <div>
+          <label>Your Comment
+            <input type='textarea' name='newcomment' id='newtext' onChange={this.handleChange} value={this.state.newcomment}/>
+          </label>
+        </div>
+        <button type="submit">Add Comment</button>
+      </form>
     )
   }
 }
