@@ -1,4 +1,4 @@
-export default function booksReducer(state = {fiction: [], nonfiction:[], loading: false}, action) {
+export default function booksReducer(state = {fiction: [], nonfiction:[], comments:[], loading: false}, action) {
  switch(action.type) {
 
    case 'LOADING':
@@ -22,6 +22,11 @@ export default function booksReducer(state = {fiction: [], nonfiction:[], loadin
                                     link: book.amazon_product_url}))
             }
 
+    case 'ADD_COMMENT':
+      return {
+        ...state,
+        comments: state.comments.concat(action.comment)
+      }
     default:
       return state;
  }
