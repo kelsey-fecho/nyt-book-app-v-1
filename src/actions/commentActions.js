@@ -1,5 +1,5 @@
 export function addComment() {
   return (dispatch) => {
-    dispatch({type="ADD_COMMENT"})
+    dispatch({type: "ADD_COMMENT"})
   }
 }
