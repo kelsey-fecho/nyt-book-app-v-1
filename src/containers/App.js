@@ -31,7 +31,7 @@ export class App extends Component {
 const mapStateToProps = state => {
   return {
     fiction: state.fiction,
-    nonfiction: state.nonfiction
+    nonfiction: state.nonfiction,
   }
 }
 
