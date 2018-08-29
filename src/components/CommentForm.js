@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Container, Row, Col} from 'reactstrap'
-import {addComment} from '../actions/commentActions'
+//import {addComment} from '../actions/commentActions'
 export class CommentForm extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state={
       comment: '',
@@ -20,8 +20,7 @@ export class CommentForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    addComment(this.state)
-    console.log(addComment(this.state))
+    this.props.addComment(this.state)
     this.setState({
       comment: '',
       author: ''
