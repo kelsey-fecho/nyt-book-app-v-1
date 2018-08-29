@@ -23,11 +23,8 @@ export default function booksReducer(state = {fiction: [], nonfiction:[], commen
             }
 
     case 'ADD_COMMENT':
-      console.log(action)
-      return {
-        ...state,
-        comments: state.comments.concat(action.comment)
-      }
+      return Object.assign({}, state, {comments: state.comments.concat(action.comment)})
+
     default:
       return state;
  }
