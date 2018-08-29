@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Comment = ({comment}) =>
-  <div className="border rounded align-middle">
-    <p>{comment.comment}</p>
-    <p><i>{comment.author}</i></p>
+  <div style={{padding: "1em"}}>
+    <h5>{comment.comment}</h5>
+    <p><i>by: {comment.author}</i></p>
   </div>
 
 

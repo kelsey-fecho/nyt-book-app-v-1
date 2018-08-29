@@ -29,7 +29,7 @@ export class CommentForm extends Component {
 
   render(){
     return(
-      <Container>
+      <Container style={{margin: "1em"}}>
         <Row>
           <Col md={{ ize: 8, offset: 2}}>
             <form onSubmit={this.handleSubmit}>

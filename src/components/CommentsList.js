@@ -6,11 +6,9 @@ export class CommentsList extends Component{
   render(){
     return(
       <Container>
-        <Row>
           {this.props.comments.map((comment, index) =>
-            <Col md={{ ize: 8, offset: 2}}><Comment comment={comment} key={index} /></Col>
+            <Row><Col md={{ size: 8, offset: 2}} className="border rounded align-middle"><Comment comment={comment} key={index} /></Col></Row>
           )}
-        </Row>
       </Container>
     )
   }
